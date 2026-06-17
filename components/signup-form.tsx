@@ -155,7 +155,7 @@ export function SignupForm() {
               value={data.nit}
               onChange={(e) => update('nit', e.target.value)}
               className={fieldClass}
-              placeholder="NIT de la empresa"
+              placeholder="ejemplo: restaurante"
             />
           </Field>
 
