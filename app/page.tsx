@@ -7,6 +7,7 @@ import { Audience } from '@/components/audience'
 import { SignupForm } from '@/components/signup-form'
 import { PaymentSection } from '@/components/payment-section'
 import { SiteFooter } from '@/components/site-footer'
+import { WhatsAppButton } from '@/components/whatsapp-button'
 
 export default function Page() {
   return (
@@ -20,6 +21,7 @@ export default function Page() {
       <SignupForm />
       <PaymentSection />
       <SiteFooter />
+      <WhatsAppButton />
     </main>
   )
 }
