@@ -3,8 +3,9 @@
 import { useState, type FormEvent } from 'react'
 import { ArrowRight, CheckCircle2, Loader2 } from 'lucide-react'
 
-// ⬇️ PEGA AQUÍ LA URL DE TU GOOGLE APPS SCRIPT
-const GOOGLE_SHEET_URL = 'PEGAR_AQUI_LA_URL_DEL_GOOGLE_APPS_SCRIPT'
+// URL del Google Apps Script que recibe las inscripciones
+const GOOGLE_SHEET_URL =
+  'https://script.google.com/macros/s/AKfycbxjXeZs-aUZEOI25gWu0hN2u-ZQN6pgin_vusqObL08WKixYSRcmbskh-NXaNXziu6yVg/exec'
 
 const SECCIONALES = ['Bucaramanga', 'Girón', 'Piedecuesta', 'Floridablanca']
 
@@ -50,10 +51,12 @@ export function SignupForm() {
     if (!validate()) return
     setStatus('submitting')
     try {
-      // Nota: no se envía la cabecera Content-Type a propósito,
-      // para evitar el preflight CORS con Google Apps Script.
+      // Apps Script no admite CORS, por eso usamos no-cors.
+      // La respuesta será opaca, pero el registro se guarda igual.
       await fetch(GOOGLE_SHEET_URL, {
         method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
         body: JSON.stringify({
           nombre: data.nombre,
           cedula: data.cedula,

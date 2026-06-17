@@ -5,6 +5,7 @@ import { Levels } from '@/components/levels'
 import { FullDiploma } from '@/components/full-diploma'
 import { Audience } from '@/components/audience'
 import { SignupForm } from '@/components/signup-form'
+import { PaymentSection } from '@/components/payment-section'
 import { SiteFooter } from '@/components/site-footer'
 
 export default function Page() {
@@ -17,6 +18,7 @@ export default function Page() {
       <FullDiploma />
       <Audience />
       <SignupForm />
+      <PaymentSection />
       <SiteFooter />
     </main>
   )
