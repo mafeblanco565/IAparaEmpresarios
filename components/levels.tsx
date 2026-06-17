@@ -57,10 +57,13 @@ export function Levels() {
           <a
             href="/programa-completo-ia-para-empresarios.pdf"
             download
-            className="font-heading inline-flex items-center gap-2 rounded-full bg-ink px-8 py-4 text-base font-bold uppercase tracking-wide text-white transition hover:bg-brand-red"
+            className="font-heading group inline-flex animate-neon-pulse items-center gap-2 rounded-full bg-[#39ff14] px-8 py-4 text-base font-bold uppercase tracking-wide text-ink shadow-[0_0_20px_rgba(57,255,20,0.6)] transition duration-300 hover:scale-105 hover:bg-[#5fff45] hover:shadow-[0_0_35px_rgba(57,255,20,0.9)]"
           >
             Descarga programa completo
-            <Download className="h-5 w-5" aria-hidden="true" />
+            <Download
+              className="h-5 w-5 transition-transform duration-300 group-hover:translate-y-0.5"
+              aria-hidden="true"
+            />
           </a>
         </div>
       </div>
