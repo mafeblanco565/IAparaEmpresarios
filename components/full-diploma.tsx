@@ -8,7 +8,7 @@ const benefits = [
   },
   {
     icon: BadgeCheck,
-    text: 'Formación de calidad: ISO 9001:2015, NTC 5555:2011, NTC 5581:2011, NTC 5666:2011.',
+    text: 'Formación con Calidad Certificada ISO 9001:2015, NTC 5555:2011, NTC 5581:2011, NTC 5666:2011.',
   },
   { icon: Building2, text: 'Casos reales de tu sector.' },
   { icon: Award, text: 'Certificado y graduación al finalizar.' },
