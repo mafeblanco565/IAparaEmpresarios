@@ -1,4 +1,4 @@
-import { Rocket, Gift, Building2, Award } from 'lucide-react'
+import { Rocket, BadgeCheck, Building2, Award } from 'lucide-react'
 import { FloatingBlobs } from './blobs'
 
 const benefits = [
@@ -6,7 +6,10 @@ const benefits = [
     icon: Rocket,
     text: 'Mientras aprendes, transformas tu negocio: no trabajas con ejemplos, trabajas en tu propia empresa.',
   },
-  { icon: Gift, text: 'Herramientas 100% gratuitas.' },
+  {
+    icon: BadgeCheck,
+    text: 'Formación de calidad: ISO 9001:2015, NTC 5555:2011, NTC 5581:2011, NTC 5666:2011.',
+  },
   { icon: Building2, text: 'Casos reales de tu sector.' },
   { icon: Award, text: 'Certificado y graduación al finalizar.' },
 ]
