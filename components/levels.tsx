@@ -1,3 +1,5 @@
+import { Download } from 'lucide-react'
+
 const levels = [
   {
     num: 'I',
@@ -49,6 +51,17 @@ export function Levels() {
               </p>
             </article>
           ))}
+        </div>
+
+        <div className="mt-12 flex justify-center">
+          <a
+            href="/programa-completo-ia-para-empresarios.pdf"
+            download
+            className="font-heading inline-flex items-center gap-2 rounded-full bg-ink px-8 py-4 text-base font-bold uppercase tracking-wide text-white transition hover:bg-brand-red"
+          >
+            Descarga programa completo
+            <Download className="h-5 w-5" aria-hidden="true" />
+          </a>
         </div>
       </div>
     </section>
