@@ -5,7 +5,7 @@ import { ArrowRight, CheckCircle2, Loader2 } from 'lucide-react'
 
 // URL del Google Apps Script que recibe las inscripciones
 const GOOGLE_SHEET_URL =
-  'https://script.google.com/macros/s/AKfycbxHJ5v5VgGesTOQmjrwjrtkE4s2m2meuPrRLKn8QOPQeOrHc7mA1OwS9XuN5jF-T9RN3A/exec'
+  'https://script.google.com/macros/s/AKfycbxpLExuSdNAK83hIXAqGbZkBC3rVccYx__buENlBzYV0mFNmQohi5yW8jIqzRtvBvawNQ/exec'
 
 const SECCIONALES = ['Bucaramanga', 'Girón', 'Piedecuesta', 'Floridablanca']
 
@@ -53,21 +53,22 @@ export function SignupForm() {
     if (!validate()) return
     setStatus('submitting')
     try {
-      // Apps Script no admite CORS, por eso usamos no-cors.
-      // La respuesta será opaca, pero el registro se guarda igual.
+      // Enviamos como form-urlencoded para que los datos lleguen en e.parameter
+      // del Apps Script (formato más compatible) y sin disparar preflight CORS.
+      const params = new URLSearchParams({
+        nombre: data.nombre,
+        cedula: data.cedula,
+        correo: data.correo,
+        celular: data.celular,
+        empresa: data.empresa,
+        nit: data.nit,
+        seccional: data.seccional,
+      })
       await fetch(GOOGLE_SHEET_URL, {
         method: 'POST',
         mode: 'no-cors',
-        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-        body: JSON.stringify({
-          nombre: data.nombre,
-          cedula: data.cedula,
-          correo: data.correo,
-          celular: data.celular,
-          empresa: data.empresa,
-          nit: data.nit,
-          seccional: data.seccional,
-        }),
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8' },
+        body: params.toString(),
       })
       setStatus('success')
       setData(initialData)
