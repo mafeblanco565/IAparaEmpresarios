@@ -5,7 +5,7 @@ import { ArrowRight, CheckCircle2, Loader2 } from 'lucide-react'
 
 // URL del Google Apps Script que recibe las inscripciones
 const GOOGLE_SHEET_URL =
-  'https://script.google.com/macros/s/AKfycbxHJ5v5VgGesTOQmjrwjrtkE4s2m2meuPrRLKn8QOPQeOrHc7mA1OwS9XuN5jF-T9RN3A/exec'
+  'https://script.google.com/macros/s/AKfycbxpLExuSdNAK83hIXAqGbZkBC3rVccYx__buENlBzYV0mFNmQohi5yW8jIqzRtvBvawNQ/exec'
 
 const SECCIONALES = ['Bucaramanga', 'Girón', 'Piedecuesta', 'Floridablanca']
 
