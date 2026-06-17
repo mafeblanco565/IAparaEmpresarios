@@ -7,7 +7,7 @@ export function PromoBanner() {
           <span className="text-pink">30% de descuento</span> si te
           inscribes <span className="text-pink">hoy mismo</span>
         </p>
-        <p className="mt-2 text-sm text-white/70">Cupos limitados por seccional.</p>
+        <p className="mt-2 text-xs text-white/70">Promoción valida hasta el 30 de junio, cupos limitados</p>
       </div>
     </section>
   )

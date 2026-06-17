@@ -149,13 +149,13 @@ export function SignupForm() {
             />
           </Field>
 
-          <Field label="NIT" error={errors.nit}>
+          <Field label="Actividad a la que pertenece" error={errors.nit}>
             <input
               type="text"
               value={data.nit}
               onChange={(e) => update('nit', e.target.value)}
               className={fieldClass}
-              placeholder="NIT de la empresa"
+              placeholder="ejemplo: restaurante"
             />
           </Field>
 

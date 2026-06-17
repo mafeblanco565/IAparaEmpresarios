@@ -3,7 +3,7 @@ import { Download } from 'lucide-react'
 const levels = [
   {
     num: 'I',
-    title: 'Herramientas Digitales e IA para Negocios',
+    title: 'IA y Herramientas Digitales para Negocios',
     meta: '25 horas · 10 sesiones · Presencial',
     desc: 'Fundamentos de IA, herramientas digitales esenciales, tus primeros agentes (Gems) y prompts básicos. Ideal para empezar desde cero.',
   },
@@ -15,7 +15,7 @@ const levels = [
   },
   {
     num: 'III',
-    title: 'Automatización e Inteligencia de Negocios',
+    title: 'IA, automatización e Inteligencia de Negocios',
     meta: '50 horas · 20 sesiones',
     desc: 'Ventas con IA, automatización de procesos con n8n, inteligencia de negocios y herramientas avanzadas. Automatiza y escala tu empresa.',
   },
@@ -26,7 +26,7 @@ export function Levels() {
     <section id="niveles" className="bg-paper-soft py-20 sm:py-28">
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
         <h2 className="font-heading max-w-3xl text-balance text-4xl font-bold uppercase leading-[0.95] tracking-tight text-ink sm:text-5xl lg:text-6xl">
-          Un camino completo, nivel por nivel.
+          Una ruta clara, nivel por nivel.
         </h2>
         <div className="mt-12 grid gap-6 md:grid-cols-3">
           {levels.map((level) => (
