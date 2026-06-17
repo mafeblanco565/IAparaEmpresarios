@@ -53,21 +53,22 @@ export function SignupForm() {
     if (!validate()) return
     setStatus('submitting')
     try {
-      // Apps Script no admite CORS, por eso usamos no-cors.
-      // La respuesta será opaca, pero el registro se guarda igual.
+      // Enviamos como form-urlencoded para que los datos lleguen en e.parameter
+      // del Apps Script (formato más compatible) y sin disparar preflight CORS.
+      const params = new URLSearchParams({
+        nombre: data.nombre,
+        cedula: data.cedula,
+        correo: data.correo,
+        celular: data.celular,
+        empresa: data.empresa,
+        nit: data.nit,
+        seccional: data.seccional,
+      })
       await fetch(GOOGLE_SHEET_URL, {
         method: 'POST',
         mode: 'no-cors',
-        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-        body: JSON.stringify({
-          nombre: data.nombre,
-          cedula: data.cedula,
-          correo: data.correo,
-          celular: data.celular,
-          empresa: data.empresa,
-          nit: data.nit,
-          seccional: data.seccional,
-        }),
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8' },
+        body: params.toString(),
       })
       setStatus('success')
       setData(initialData)
