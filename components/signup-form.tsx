@@ -5,7 +5,7 @@ import { ArrowRight, CheckCircle2, Loader2 } from 'lucide-react'
 
 // URL del Google Apps Script que recibe las inscripciones
 const GOOGLE_SHEET_URL =
-  'https://script.google.com/macros/s/AKfycbxjXeZs-aUZEOI25gWu0hN2u-ZQN6pgin_vusqObL08WKixYSRcmbskh-NXaNXziu6yVg/exec'
+  'https://script.google.com/macros/s/AKfycbxHJ5v5VgGesTOQmjrwjrtkE4s2m2meuPrRLKn8QOPQeOrHc7mA1OwS9XuN5jF-T9RN3A/exec'
 
 const SECCIONALES = ['Bucaramanga', 'Girón', 'Piedecuesta', 'Floridablanca']
 
@@ -15,6 +15,7 @@ const initialData = {
   nombre: '',
   cedula: '',
   correo: '',
+  celular: '',
   empresa: '',
   nit: '',
   seccional: '',
@@ -39,6 +40,7 @@ export function SignupForm() {
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.correo)) {
       next.correo = 'Ingresa un correo válido.'
     }
+    if (!data.celular.trim()) next.celular = 'Ingresa tu celular.'
     if (!data.empresa.trim()) next.empresa = 'Ingresa el nombre de la empresa.'
     if (!data.nit.trim()) next.nit = 'Ingresa el NIT.'
     if (!data.seccional) next.seccional = 'Selecciona una seccional.'
@@ -61,6 +63,7 @@ export function SignupForm() {
           nombre: data.nombre,
           cedula: data.cedula,
           correo: data.correo,
+          celular: data.celular,
           empresa: data.empresa,
           nit: data.nit,
           seccional: data.seccional,
@@ -136,6 +139,18 @@ export function SignupForm() {
               className={fieldClass}
               placeholder="tucorreo@ejemplo.com"
               autoComplete="email"
+            />
+          </Field>
+
+          <Field label="Celular" error={errors.celular}>
+            <input
+              type="tel"
+              inputMode="numeric"
+              value={data.celular}
+              onChange={(e) => update('celular', e.target.value.replace(/\D/g, ''))}
+              className={fieldClass}
+              placeholder="Número de celular"
+              autoComplete="tel"
             />
           </Field>
 
