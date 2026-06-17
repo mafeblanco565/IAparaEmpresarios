@@ -3,7 +3,7 @@ import { Download } from 'lucide-react'
 const levels = [
   {
     num: 'I',
-    title: 'Herramientas Digitales e IA para Negocios',
+    title: 'IA y Herramientas Digitales para Negocios',
     meta: '25 horas · 10 sesiones · Presencial',
     desc: 'Fundamentos de IA, herramientas digitales esenciales, tus primeros agentes (Gems) y prompts básicos. Ideal para empezar desde cero.',
   },
@@ -15,7 +15,7 @@ const levels = [
   },
   {
     num: 'III',
-    title: 'Automatización e Inteligencia de Negocios',
+    title: 'IA, automatización e Inteligencia de Negocios',
     meta: '50 horas · 20 sesiones',
     desc: 'Ventas con IA, automatización de procesos con n8n, inteligencia de negocios y herramientas avanzadas. Automatiza y escala tu empresa.',
   },
