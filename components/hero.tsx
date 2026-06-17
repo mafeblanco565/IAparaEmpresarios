@@ -14,7 +14,7 @@ export function Hero() {
       <div className="absolute inset-0 -z-10 bg-ink/80" aria-hidden="true" />
       <div className="relative mx-auto max-w-6xl px-5 text-center sm:px-8">
         <h1 className="font-heading text-balance text-5xl font-bold uppercase leading-[0.95] tracking-tight text-white sm:text-7xl lg:text-8xl">
-          Aprende IA.
+          Aprende IA
           <br />
           <span className="text-brand-red">
             Lleva tu negocio a otro nivel.
