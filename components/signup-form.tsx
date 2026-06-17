@@ -149,7 +149,7 @@ export function SignupForm() {
             />
           </Field>
 
-          <Field label="NIT" error={errors.nit}>
+          <Field label="Actividad a la que pertenece" error={errors.nit}>
             <input
               type="text"
               value={data.nit}

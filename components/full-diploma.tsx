@@ -20,13 +20,10 @@ export function FullDiploma() {
       <FloatingBlobs />
       <div className="relative mx-auto max-w-5xl px-5 sm:px-8">
         <h2 className="font-heading text-balance text-4xl font-bold uppercase leading-[0.95] tracking-tight text-white sm:text-5xl lg:text-6xl">
-          El diplomado completo.
+          Diplomado en ia: Transformación digital
         </h2>
         <p className="mt-6 max-w-3xl text-pretty text-lg leading-relaxed text-white/70">
-          Los 3 niveles integrados en una sola ruta de formación: 125 horas de
-          práctica real, desde los fundamentos hasta la automatización. Termina
-          sabiendo usar, aplicar y automatizar con IA para que lleves tu negocio a
-          otro nivel.
+          3 niveles integrados en una sola ruta de formación: 125 horas Teórico-prácticos, desde los fundamentos hasta la automatización.  Aprende, usa, aplica y automatiza con IA para que lleves tu negocio a otro nivel.
         </p>
         <ul className="mt-12 grid gap-5 sm:grid-cols-2">
           {benefits.map((b, i) => {

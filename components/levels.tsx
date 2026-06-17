@@ -26,7 +26,7 @@ export function Levels() {
     <section id="niveles" className="bg-paper-soft py-20 sm:py-28">
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
         <h2 className="font-heading max-w-3xl text-balance text-4xl font-bold uppercase leading-[0.95] tracking-tight text-ink sm:text-5xl lg:text-6xl">
-          Un camino completo, nivel por nivel.
+          Una ruta clara, nivel por nivel.
         </h2>
         <div className="mt-12 grid gap-6 md:grid-cols-3">
           {levels.map((level) => (

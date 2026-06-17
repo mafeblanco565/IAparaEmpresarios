@@ -17,12 +17,12 @@ export function Hero() {
           Aprende IA
           <br />
           <span className="text-brand-red">
-            Lleva tu negocio a otro nivel.
+            Lleva tu negocio a otro nivel
           </span>
         </h1>
         <p className="mx-auto mt-8 max-w-2xl text-pretty text-base leading-relaxed text-white/70 sm:text-lg">
-          Diplomado en IA : Transformación Digital · 125 horas · 3 niveles · Para
-          microempresarios sin experiencia técnica.
+          Diplomado en IA : Transformación Digital  125 horas 3 niveles Para
+          microempresarios con o sin experiencia técnica.
         </p>
         <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
           <a
