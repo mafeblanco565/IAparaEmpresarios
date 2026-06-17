@@ -15,7 +15,7 @@ export function Hero() {
       <div className="relative mx-auto max-w-6xl px-5 text-center sm:px-8">
         <h1 className="font-heading text-balance text-4xl font-bold uppercase leading-[0.95] tracking-tight text-white sm:text-6xl lg:text-7xl">
           Aprende{' '}
-          <span className="inline-block align-baseline text-white text-6xl sm:text-8xl lg:text-9xl">
+          <span className="text-white [-webkit-text-stroke:2px_var(--color-brand-red)] [text-stroke:2px_var(--color-brand-red)]">
             IA
           </span>
           <br />
