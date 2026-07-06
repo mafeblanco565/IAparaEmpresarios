@@ -7,8 +7,6 @@ import { ArrowRight, CheckCircle2, Loader2 } from 'lucide-react'
 const GOOGLE_SHEET_URL =
   'https://script.google.com/macros/s/AKfycbxpLExuSdNAK83hIXAqGbZkBC3rVccYx__buENlBzYV0mFNmQohi5yW8jIqzRtvBvawNQ/exec'
 
-const SECCIONALES = ['Bucaramanga', 'Girón', 'Piedecuesta', 'Floridablanca']
-
 type Status = 'idle' | 'submitting' | 'success' | 'error'
 
 const initialData = {
@@ -18,7 +16,6 @@ const initialData = {
   celular: '',
   empresa: '',
   nit: '',
-  seccional: '',
 }
 
 export function SignupForm() {
@@ -43,7 +40,6 @@ export function SignupForm() {
     if (!data.celular.trim()) next.celular = 'Ingresa tu celular.'
     if (!data.empresa.trim()) next.empresa = 'Ingresa el nombre de la empresa.'
     if (!data.nit.trim()) next.nit = 'Ingresa el NIT.'
-    if (!data.seccional) next.seccional = 'Selecciona una seccional.'
     setErrors(next)
     return Object.keys(next).length === 0
   }
@@ -62,7 +58,6 @@ export function SignupForm() {
         celular: data.celular,
         empresa: data.empresa,
         nit: data.nit,
-        seccional: data.seccional,
       })
       await fetch(GOOGLE_SHEET_URL, {
         method: 'POST',
@@ -106,7 +101,7 @@ export function SignupForm() {
           Aparta tu cupo.
         </h2>
         <p className="mt-4 text-pretty text-lg leading-relaxed text-white/80">
-          Asegura tu lugar con hasta 30% de descuento por inscribirte hoy.
+          Asegura tu lugar con hasta 20% de descuento por inscribirte hoy.
         </p>
 
         <form onSubmit={handleSubmit} noValidate className="mt-10 grid gap-5">
@@ -173,23 +168,6 @@ export function SignupForm() {
               className={fieldClass}
               placeholder="ejemplo: restaurante"
             />
-          </Field>
-
-          <Field label="Seccional de Cámara de Comercio" error={errors.seccional}>
-            <select
-              value={data.seccional}
-              onChange={(e) => update('seccional', e.target.value)}
-              className={`${fieldClass} appearance-none`}
-            >
-              <option value="" disabled>
-                Selecciona una seccional
-              </option>
-              {SECCIONALES.map((s) => (
-                <option key={s} value={s} className="text-black">
-                  {s}
-                </option>
-              ))}
-            </select>
           </Field>
 
           {status === 'error' && (
