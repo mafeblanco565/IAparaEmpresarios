@@ -29,8 +29,6 @@ export function Hero() {
           125 horas Teórico-prácticas
           <br />
           3 niveles
-          <br />
-          Para microempresarios con o sin experiencia técnica.
         </p>
         <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
           <a
