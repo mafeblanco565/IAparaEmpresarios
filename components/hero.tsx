@@ -26,7 +26,7 @@ export function Hero() {
         <p className="mx-auto mt-8 max-w-2xl text-pretty text-base leading-relaxed text-white/70 sm:text-lg">
           Diplomado en IA : Transformación Digital
           <br />
-          125 horas Teórico-prácticas
+          100 horas Cátedra + 25 horas autónomas
           <br />
           3 niveles
         </p>
