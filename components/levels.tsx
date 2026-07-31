@@ -4,19 +4,19 @@ const levels = [
   {
     num: 'I',
     title: 'IA y Herramientas Digitales para Negocios',
-    meta: '25 horas · 10 sesiones · Presencial',
+    meta: '20 horas Cátedra + 5 horas autónomas · 10 sesiones · Presencial',
     desc: 'Fundamentos de IA, herramientas digitales esenciales, tus primeros agentes (Gems) y prompts básicos. Ideal para empezar desde cero.',
   },
   {
     num: 'II',
     title: 'IA en Marketing, Ventas y Finanzas',
-    meta: '50 horas · 20 sesiones',
+    meta: '40 horas Cátedra + 10 horas autónomas · 20 sesiones',
     desc: 'Agentes de IA y prompt engineering, finanzas con IA, marketing de contenido y tu primera página web con IA. Aplica la IA a las áreas clave de tu negocio.',
   },
   {
     num: 'III',
     title: 'IA, automatización e Inteligencia de Negocios',
-    meta: '50 horas · 20 sesiones',
+    meta: '40 horas Cátedra + 10 horas autónomas · 20 sesiones',
     desc: 'Ventas con IA, automatización de procesos con n8n, inteligencia de negocios y herramientas avanzadas. Automatiza y escala tu empresa.',
   },
 ]
