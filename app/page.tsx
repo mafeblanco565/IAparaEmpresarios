@@ -1,4 +1,7 @@
-import { ArrowDownRight, ArrowUpRight, Clock3, Hexagon, MessageCircle, MoveUpRight, Sparkles, Target, Workflow } from 'lucide-react'
+'use client'
+
+import { useState } from 'react'
+import { ArrowDownRight, ArrowUpRight, Clock3, Hexagon, Menu, MessageCircle, MoveUpRight, Sparkles, Target, Workflow, X } from 'lucide-react'
 
 const whatsappUrl = 'https://wa.me/573158898014?text=Hola%2C%20quiero%20apartar%20mi%20cupo%20para%20el%20Diplomado%20en%20IA%20para%20empresarios.'
 
@@ -9,14 +12,26 @@ const levels = [
 ]
 const audiences = ['Emprendedores', 'Dueños de negocio', 'Comercio', 'Restaurantes', 'Alimentos', 'Talleres y oficios', 'Microempresas', 'Tiendas de ropa', 'Artesanos', 'Servicios']
 
+function Header() {
+  const [menuOpen, setMenuOpen] = useState(false)
+  const links = [['La ruta', '#ruta'], ['El diplomado', '#diplomado'], ['Para quién', '#dirigido'], ['Inscripción', '#cupo']]
+  return (
+    <>
+      <header className="site-header reference-header">
+        <a href="#inicio" className="brand reference-logo" aria-label="Multicómputo, inicio"><img src="/images/logo-light-bg.png" alt="Multicómputo" /></a>
+        <nav className="reference-nav" aria-label="Navegación principal">{links.map(([label, href], index) => <a className={index === 0 ? 'active' : ''} href={href} key={href}>{label}</a>)}</nav>
+        <a className="header-cta reference-signin" href={whatsappUrl} target="_blank" rel="noreferrer">Aparta tu cupo <ArrowUpRight size={14} /></a>
+        <button className={`mobile-menu-toggle ${menuOpen ? 'open' : ''}`} aria-label={menuOpen ? 'Cerrar menú' : 'Abrir menú'} aria-expanded={menuOpen} onClick={() => setMenuOpen(!menuOpen)}>{menuOpen ? <X size={20} /> : <Menu size={20} />}</button>
+      </header>
+      {menuOpen && <div className="mobile-menu-sheet">{links.map(([label, href]) => <a href={href} key={href} onClick={() => setMenuOpen(false)}>{label}</a>)}<a className="mobile-menu-cta" href={whatsappUrl} target="_blank" rel="noreferrer">Aparta tu cupo <ArrowUpRight size={16} /></a></div>}
+    </>
+  )
+}
+
 export default function Home() {
   return (
     <main>
-      <header className="site-header">
-        <a href="#inicio" className="brand" aria-label="Multicómputo, inicio"><img src="/images/logo-dark-bg.png" alt="Multicómputo" /></a>
-        <nav aria-label="Navegación principal"><a href="#ruta">La ruta</a><a href="#diplomado">El diplomado</a><a href="#dirigido">Para quién</a></nav>
-        <a className="header-cta" href={whatsappUrl} target="_blank" rel="noreferrer">Aparta tu cupo <ArrowUpRight size={16} /></a>
-      </header>
+      <Header />
 
       <section id="inicio" className="hero-video-section">
         <video className="hero-video" autoPlay loop muted playsInline poster="/images/hero-bg.jpg" aria-hidden="true">
@@ -25,11 +40,11 @@ export default function Home() {
         <div className="hero-video-shade" aria-hidden="true" />
         <div className="hero-grid-lines" aria-hidden="true" />
         <div className="hero-centered-content">
-          <p className="kicker"><span className="status-dot" /> Diplomado presencial · Bucaramanga</p>
-          <h1>Aprende IA.<br /><em>Lleva tu negocio a otro nivel.</em></h1>
-          <p className="hero-lead">Transforma lo que haces hoy en las herramientas que tu empresa necesita mañana.</p>
-          <div className="hero-actions"><a className="button button-primary" href={whatsappUrl} target="_blank" rel="noreferrer">Aparta tu cupo <ArrowUpRight size={18} /></a><a className="text-link" href="#ruta">Ver la ruta <ArrowDownRight size={17} /></a></div>
-          <div className="hero-proof"><span>125</span> horas para pasar de aprender a aplicar <span className="proof-divider" /> <span>03</span> niveles integrados</div>
+          <div className="trust-pill"><span className="trust-avatar"><span>AI</span></span><span className="trust-avatar"><span>IA</span></span><span className="trust-avatar"><span>+</span></span><strong>Formación para empresas reales</strong></div>
+          <h1><span>Aprende IA.</span><span><em>Lleva tu negocio a otro nivel.</em></span></h1>
+          <p className="hero-lead">Una ruta práctica para transformar tus procesos, vender mejor y hacer crecer tu empresa con inteligencia artificial.</p>
+          <div className="hero-actions"><a className="button button-primary" href={whatsappUrl} target="_blank" rel="noreferrer">Aparta tu cupo <ArrowUpRight size={18} /></a><a className="text-link" href="#ruta">Ver los niveles <ArrowDownRight size={17} /></a></div>
+          <div className="hero-proof"><span>125</span> horas de formación aplicada <span className="proof-divider" /> <span>03</span> niveles integrados</div>
         </div>
         <div className="video-status"><span className="status-dot" /> AI / BUSINESS / 2026</div>
         <div className="scroll-cue"><span>Scroll para explorar</span><ArrowDownRight size={17} /></div>
