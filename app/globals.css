@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600&family=Instrument+Serif:ital@0;1&display=swap');
 @import 'tailwindcss';
 @import 'tw-animate-css';
 @import 'shadcn/tailwind.css';
@@ -105,3 +106,21 @@ h1 em, h2 em { color: var(--coral); font-style: normal; }
 /* El titular debe conservar sus dos líneas completas en anchos de laptop. */
 .hero-centered-content h1 { font-size: clamp(2.75rem, 5.2vw, 5.6rem); }
 @media (max-width: 720px) { .hero-centered-content h1 { font-size: clamp(2.65rem, 11.2vw, 4.8rem); } }
+
+/* Experiencia digital inmersiva: liquid glass, blur reveal y tipografía editorial. */
+:root { --glass: rgba(255,255,255,.075); --glass-line: rgba(255,255,255,.28); --display: 'Instrument Serif', Georgia, serif; --ui: 'Barlow', var(--font-inter), sans-serif; }
+body { font-family: var(--ui); }
+h1, h2, h3 { font-family: var(--display); font-weight: 400; letter-spacing: -.035em; }
+.liquid-glass { position: relative; overflow: hidden; background: var(--glass); border: 1px solid transparent; box-shadow: inset 0 1px 1px rgba(255,255,255,.1), 0 18px 60px rgba(0,0,0,.14); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+.liquid-glass::before { content: ''; position: absolute; inset: 0; padding: 1px; border-radius: inherit; background: linear-gradient(180deg, rgba(255,255,255,.43), rgba(255,255,255,.12) 20%, transparent 42%, transparent 60%, rgba(255,255,255,.12) 80%, rgba(255,255,255,.4)); -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; }
+.reference-nav, .reference-signin, .trust-pill, .level-card, .payment-card, .benefit-grid div, .tag-cloud span { border: 1px solid rgba(255,255,255,.22); box-shadow: inset 0 1px 1px rgba(255,255,255,.1), 0 18px 50px rgba(0,0,0,.16); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); }
+.hero-video-section::after { content: ''; position: absolute; z-index: -1; inset: 10% 20%; background: radial-gradient(circle, rgba(239,75,95,.16), transparent 58%); filter: blur(45px); pointer-events: none; }
+.hero-centered-content h1 { font-family: var(--display); font-style: italic; font-weight: 400; letter-spacing: -.045em; line-height: .92; }
+.hero-centered-content h1 em, .hero-centered-content h1 span:last-child em { color: white; text-shadow: 0 0 35px rgba(255,255,255,.16); }
+.hero-centered-content .button-primary { box-shadow: 0 0 0 1px rgba(255,255,255,.15), 0 0 22px rgba(255,255,255,.25), 0 0 44px rgba(255,255,255,.1); }
+.hero-centered-content .button-primary:hover { box-shadow: 0 0 0 1px rgba(186,255,56,.3), 0 0 28px rgba(186,255,56,.35); }
+.level-card { background: rgba(255,255,255,.045) !important; border-radius: 1.25rem; }.level-card::before { content: ''; position: absolute; inset: 0; padding: 1px; border-radius: inherit; background: linear-gradient(180deg, rgba(255,255,255,.35), rgba(255,255,255,.08) 22%, transparent 60%, rgba(255,255,255,.2)); -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; }.level-card > * { position: relative; z-index: 1; }.level-card h3 { font-size: 35px; line-height: .94; }.section h2, .transformation-section h2, .audience-section h2, .signup-section h2 { font-family: var(--display); font-weight: 400; font-style: italic; }
+.benefit-grid div, .tag-cloud span { border-color: rgba(16,17,19,.25); background: rgba(255,255,255,.22); }.benefit-grid div { border-top-color: rgba(16,17,19,.28); }.tag-cloud span { border-radius: 999px; }.tag-cloud span.highlight { background: var(--coral); border-color: var(--coral); box-shadow: 0 0 24px rgba(239,75,95,.3); }
+.hero-centered-content > *, .site-header, .level-card, .trust-strip, .transformation-copy, .audience-section > *, .signup-panel { animation: digitalReveal .85s cubic-bezier(.22,1,.36,1) both; }.hero-centered-content > :nth-child(1) { animation-delay: .18s; }.hero-centered-content > :nth-child(2) { animation-delay: .3s; }.hero-centered-content > :nth-child(3) { animation-delay: .42s; }.hero-centered-content > :nth-child(4) { animation-delay: .54s; }.hero-centered-content > :nth-child(5) { animation-delay: .66s; }.level-card:nth-child(1) { animation-delay: .16s; }.level-card:nth-child(2) { animation-delay: .28s; }.level-card:nth-child(3) { animation-delay: .4s; }
+@keyframes digitalReveal { from { opacity: 0; transform: translateY(22px) scale(.98); filter: blur(8px); } to { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); } }
+@media (prefers-reduced-motion: reduce) { .hero-centered-content > *, .site-header, .level-card, .trust-strip, .transformation-copy, .audience-section > *, .signup-panel { animation: none; } }
