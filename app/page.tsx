@@ -1,5 +1,3 @@
-'use client'
-
 import { ArrowDownRight, ArrowUpRight, Clock3, Hexagon, MessageCircle, MoveUpRight, Sparkles, Target, Workflow } from 'lucide-react'
 
 const whatsappUrl = 'https://wa.me/573158898014?text=Hola%2C%20quiero%20apartar%20mi%20cupo%20para%20el%20Diplomado%20en%20IA%20para%20empresarios.'
@@ -20,10 +18,20 @@ export default function Home() {
         <a className="header-cta" href={whatsappUrl} target="_blank" rel="noreferrer">Aparta tu cupo <ArrowUpRight size={16} /></a>
       </header>
 
-      <section id="inicio" className="hero-section">
+      <section id="inicio" className="hero-video-section">
+        <video className="hero-video" autoPlay loop muted playsInline poster="/images/hero-bg.jpg" aria-hidden="true">
+          <source src="/hero-ia.mp4" type="video/mp4" />
+        </video>
+        <div className="hero-video-shade" aria-hidden="true" />
         <div className="hero-grid-lines" aria-hidden="true" />
-        <div className="hero-copy"><p className="kicker"><span className="status-dot" /> Diplomado presencial · Bucaramanga</p><h1>La IA no es el futuro.<br /><em>Es tu siguiente paso.</em></h1><p className="hero-lead">Aprende a usar la inteligencia artificial para ordenar, vender y hacer crecer tu negocio. Una ruta concreta, de cero a automatización.</p><div className="hero-actions"><a className="button button-primary" href={whatsappUrl} target="_blank" rel="noreferrer">Quiero transformar mi negocio <ArrowUpRight size={18} /></a><a className="text-link" href="#ruta">Explorar la ruta <ArrowDownRight size={17} /></a></div><div className="hero-proof"><span>125</span> horas para pasar de aprender a aplicar <span className="proof-divider" /> <span>03</span> niveles integrados</div></div>
-        <div className="hero-visual"><div className="visual-frame"><img src="/images/hero-bg.jpg" alt="Empresarias trabajando con productos y herramientas de inteligencia artificial" /></div><div className="visual-note"><span>01 / 03</span><strong>Aprende · Usa · Aplica · Automatiza</strong></div><div className="visual-orbit orbit-one" /><div className="visual-orbit orbit-two" /></div>
+        <div className="hero-centered-content">
+          <p className="kicker"><span className="status-dot" /> Diplomado presencial · Bucaramanga</p>
+          <h1>Aprende IA.<br /><em>Lleva tu negocio a otro nivel.</em></h1>
+          <p className="hero-lead">Transforma lo que haces hoy en las herramientas que tu empresa necesita mañana.</p>
+          <div className="hero-actions"><a className="button button-primary" href={whatsappUrl} target="_blank" rel="noreferrer">Aparta tu cupo <ArrowUpRight size={18} /></a><a className="text-link" href="#ruta">Ver la ruta <ArrowDownRight size={17} /></a></div>
+          <div className="hero-proof"><span>125</span> horas para pasar de aprender a aplicar <span className="proof-divider" /> <span>03</span> niveles integrados</div>
+        </div>
+        <div className="video-status"><span className="status-dot" /> AI / BUSINESS / 2026</div>
         <div className="scroll-cue"><span>Scroll para explorar</span><ArrowDownRight size={17} /></div>
       </section>
 
