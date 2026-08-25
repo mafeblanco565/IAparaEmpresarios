@@ -1,27 +1,44 @@
-import { SiteHeader } from '@/components/site-header'
-import { Hero } from '@/components/hero'
-import { PromoBanner } from '@/components/promo-banner'
-import { Levels } from '@/components/levels'
-import { FullDiploma } from '@/components/full-diploma'
-import { Audience } from '@/components/audience'
-import { SignupForm } from '@/components/signup-form'
-import { PaymentSection } from '@/components/payment-section'
-import { SiteFooter } from '@/components/site-footer'
-import { WhatsAppButton } from '@/components/whatsapp-button'
+'use client'
 
-export default function Page() {
+import { ArrowDownRight, ArrowUpRight, Clock3, Hexagon, MessageCircle, MoveUpRight, Sparkles, Target, Workflow } from 'lucide-react'
+
+const whatsappUrl = 'https://wa.me/573158898014?text=Hola%2C%20quiero%20apartar%20mi%20cupo%20para%20el%20Diplomado%20en%20IA%20para%20empresarios.'
+
+const levels = [
+  { number: '01', eyebrow: 'Empieza con claridad', title: 'IA y herramientas digitales para negocios', detail: '20 h cátedra + 5 h autónomas · 10 sesiones · Presencial', copy: 'Construye una base práctica: entiende la IA, domina tus primeras herramientas y crea prompts que sí te sirven.', accent: 'lime' },
+  { number: '02', eyebrow: 'Lleva la IA al día a día', title: 'IA en marketing, ventas y finanzas', detail: '40 h cátedra + 10 h autónomas · 20 sesiones', copy: 'Aplica agentes y prompt engineering para crear contenido, ordenar tus finanzas y lanzar tu primera página web.', accent: 'coral' },
+  { number: '03', eyebrow: 'Haz que tu negocio avance', title: 'IA, automatización e inteligencia de negocios', detail: '40 h cátedra + 10 h autónomas · 20 sesiones', copy: 'Conecta procesos, automatiza tareas con n8n y toma decisiones con una visión más inteligente de tu empresa.', accent: 'blue' },
+]
+const audiences = ['Emprendedores', 'Dueños de negocio', 'Comercio', 'Restaurantes', 'Alimentos', 'Talleres y oficios', 'Microempresas', 'Tiendas de ropa', 'Artesanos', 'Servicios']
+
+export default function Home() {
   return (
-    <main className="bg-white">
-      <SiteHeader />
-      <Hero />
-      <PromoBanner />
-      <Levels />
-      <FullDiploma />
-      <Audience />
-      <SignupForm />
-      <PaymentSection />
-      <SiteFooter />
-      <WhatsAppButton />
+    <main>
+      <header className="site-header">
+        <a href="#inicio" className="brand" aria-label="Multicómputo, inicio"><img src="/images/logo-dark-bg.png" alt="Multicómputo" /></a>
+        <nav aria-label="Navegación principal"><a href="#ruta">La ruta</a><a href="#diplomado">El diplomado</a><a href="#dirigido">Para quién</a></nav>
+        <a className="header-cta" href={whatsappUrl} target="_blank" rel="noreferrer">Aparta tu cupo <ArrowUpRight size={16} /></a>
+      </header>
+
+      <section id="inicio" className="hero-section">
+        <div className="hero-grid-lines" aria-hidden="true" />
+        <div className="hero-copy"><p className="kicker"><span className="status-dot" /> Diplomado presencial · Bucaramanga</p><h1>La IA no es el futuro.<br /><em>Es tu siguiente paso.</em></h1><p className="hero-lead">Aprende a usar la inteligencia artificial para ordenar, vender y hacer crecer tu negocio. Una ruta concreta, de cero a automatización.</p><div className="hero-actions"><a className="button button-primary" href={whatsappUrl} target="_blank" rel="noreferrer">Quiero transformar mi negocio <ArrowUpRight size={18} /></a><a className="text-link" href="#ruta">Explorar la ruta <ArrowDownRight size={17} /></a></div><div className="hero-proof"><span>125</span> horas para pasar de aprender a aplicar <span className="proof-divider" /> <span>03</span> niveles integrados</div></div>
+        <div className="hero-visual"><div className="visual-frame"><img src="/images/hero-bg.jpg" alt="Empresarias trabajando con productos y herramientas de inteligencia artificial" /></div><div className="visual-note"><span>01 / 03</span><strong>Aprende · Usa · Aplica · Automatiza</strong></div><div className="visual-orbit orbit-one" /><div className="visual-orbit orbit-two" /></div>
+        <div className="scroll-cue"><span>Scroll para explorar</span><ArrowDownRight size={17} /></div>
+      </section>
+
+      <section className="trust-strip" aria-label="Información de confianza"><div><span className="mono-label">UNA FORMACIÓN</span><strong>Hecha para empresas reales</strong></div><div><span className="metric">100 + 25</span><span>horas cátedra<br />+ autónomas</span></div><div><span className="metric">03</span><span>niveles<br />conectados</span></div><div><span className="metric accent-text">ISO</span><span>calidad<br />certificada</span></div></section>
+
+      <section id="ruta" className="section section-dark levels-section"><div className="section-heading"><div><p className="eyebrow">[ LA RUTA ]</p><h2>Una progresión<br /><span>que se nota.</span></h2></div><p className="section-intro">No vienes a escuchar teoría. Vienes a trabajar sobre tu propia empresa y a salir con herramientas que puedes usar desde el primer día.</p></div><div className="levels-list">{levels.map((level) => <article className={`level-card ${level.accent}`} key={level.number}><div className="level-top"><span className="level-number">{level.number}</span><span className="level-eyebrow">{level.eyebrow}</span><ArrowUpRight size={20} /></div><h3>{level.title}</h3><p className="level-detail"><Clock3 size={14} /> {level.detail}</p><p className="level-copy">{level.copy}</p></article>)}</div><div className="download-row"><span>¿Quieres ver el programa completo?</span><a href="/programa-completo-ia-para-empresarios.pdf" target="_blank" rel="noreferrer">Descargar programa <MoveUpRight size={16} /></a></div></section>
+
+      <section id="diplomado" className="section transformation-section"><div className="transformation-mark"><Hexagon size={62} strokeWidth={1} /><span>IA<br />+<br />NEGOCIO</span></div><div className="transformation-copy"><p className="eyebrow">[ EL DIPLOMADO ]</p><h2>Mientras aprendes,<br /><em>tu negocio se mueve.</em></h2><p>La diferencia está en la aplicación. No trabajas con ejemplos inventados: cada clase se conecta con los retos, procesos y oportunidades de tu propia empresa.</p><div className="benefit-grid"><div><Target size={22} /><strong>Casos de tu sector</strong><span>Lo que aprendes tiene contexto.</span></div><div><Workflow size={22} /><strong>Progreso medible</strong><span>De la idea a la implementación.</span></div><div><Sparkles size={22} /><strong>Certificado</strong><span>Graduación al completar la ruta.</span></div></div></div></section>
+
+      <section id="dirigido" className="audience-section"><div className="audience-heading"><p className="eyebrow">[ PARA QUIÉN ]</p><h2>Para quienes<br /><span>no quieren quedarse atrás.</span></h2></div><div className="audience-content"><p>Si tu negocio tiene clientes, procesos y ganas de crecer, esta ruta es para ti.</p><div className="tag-cloud">{audiences.map((audience, index) => <span key={audience} className={index % 4 === 0 ? 'highlight' : ''}>{audience}</span>)}</div></div></section>
+
+      <section id="cupo" className="signup-section"><div className="signup-panel"><div className="signup-copy"><p className="eyebrow">[ ÚLTIMO PASO ]</p><h2>Tu negocio ya está<br /><em>listo para avanzar.</em></h2><p>Aparta tu cupo hoy y recibe hasta un 20% de descuento. Los cupos son limitados.</p><a className="button button-light" href={whatsappUrl} target="_blank" rel="noreferrer"><MessageCircle size={18} /> Apartar mi cupo por WhatsApp</a></div><div className="payment-card"><span className="mono-label">PAGO CON QR</span><img src="/images/qr-pago.jpeg" alt="Código QR de Bancolombia para pagar la inscripción a Multicómputo" /><strong>Escanea, paga y confirma tu inscripción.</strong><small>Sin costo desde la app de tu entidad bancaria habilitada.</small></div></div></section>
+
+      <footer className="site-footer"><div className="footer-brand"><img src="/images/logo-dark-bg.png" alt="Multicómputo" /><p>Aprendes porque aprendes.</p></div><div className="footer-meta"><span>Multicómputo · Bucaramanga, Santander</span><a href={whatsappUrl} target="_blank" rel="noreferrer">Escríbenos <ArrowUpRight size={15} /></a></div></footer>
+      <a className="floating-whatsapp" href={whatsappUrl} target="_blank" rel="noreferrer" aria-label="Escribir por WhatsApp"><MessageCircle size={22} /></a>
     </main>
   )
 }
