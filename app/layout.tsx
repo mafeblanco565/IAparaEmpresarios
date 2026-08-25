@@ -15,9 +15,9 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'Diplomado en Transformación Digital e IA | Multicómputo',
+  title: 'Diplomado en IA y Transformación Digital | Multicómputo',
   description:
-    'Diplomado en Transformación Digital e Inteligencia Artificial para microempresarios. 125 horas, 3 niveles, sin experiencia técnica. Bucaramanga, Colombia.',
+    'Diplomado en IA y Transformación Digital para empresarios y profesionales. 125 horas, 3 niveles, sin experiencia técnica. Bucaramanga, Colombia.',
   generator: 'v0.app',
 }
 

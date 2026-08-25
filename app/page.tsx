@@ -42,7 +42,7 @@ export default function Home() {
         <div className="hero-grid-lines" aria-hidden="true" />
         <div className="hero-centered-content">
           <div className="trust-pill"><span className="trust-avatar"><span>AI</span></span><span className="trust-avatar"><span>IA</span></span><span className="trust-avatar"><span>+</span></span><strong>Formación para empresas reales</strong></div>
-          <h1><span>Aprende IA.</span><span><em>Lleva tu negocio a otro nivel.</em></span></h1>
+          <h1><span>Diplomado en IA</span><span><em>y transformación digital.</em></span></h1>
           <p className="hero-lead">Una formación práctica para empresarios y profesionales que quieren actualizarse, trabajar mejor y llevar su empresa, emprendimiento o profesión a otro nivel con IA.</p>
           <div className="hero-actions"><a className="button button-primary" href={whatsappUrl} target="_blank" rel="noreferrer">Aparta tu cupo <ArrowUpRight size={18} /></a><a className="text-link" href="#ruta">Ver los niveles <ArrowDownRight size={17} /></a></div>
           <div className="hero-proof"><span>125</span> horas para trabajar mejor <span className="proof-divider" /> <span>03</span> niveles de avance</div>
