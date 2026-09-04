@@ -26,6 +26,13 @@ export function InvitationVideo() {
     setMuted(v.muted)
   }
 
+  const restart = () => {
+    const v = ref.current
+    if (!v) return
+    v.currentTime = 0
+    v.play()
+  }
+
   return (
     <div className="invitation-video-visual">
       <video
@@ -56,6 +63,16 @@ export function InvitationVideo() {
               <path d="M8 5.14v13.72a1 1 0 0 0 1.53.85l10.79-6.86a1 1 0 0 0 0-1.7L9.53 4.29A1 1 0 0 0 8 5.14z" />
             </svg>
           )}
+        </button>
+        <button
+          type="button"
+          onClick={restart}
+          aria-label="Volver a empezar"
+        >
+          <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+            <path d="M3 2v6h6" />
+            <path d="M3.5 13a9 9 0 1 0 2-6.7L3 8" />
+          </svg>
         </button>
         <button
           type="button"
