@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { ArrowDownRight, ArrowUpRight, Clock3, Hexagon, Menu, MessageCircle, MoveUpRight, X } from 'lucide-react'
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || ''
-const whatsappUrl = 'https://wa.me/573158898014?text=Hola%2C%20quiero%20apartar%20mi%20cupo%20para%20el%20Diplomado%20en%20IA%20para%20empresarios.'
+const whatsappUrl = 'https://wa.me/573158071474?text=Hola%2C%20quiero%20apartar%20mi%20cupo%20para%20el%20Diplomado%20en%20IA%20para%20empresarios.'
 
 const levels = [
   { number: '01', eyebrow: 'Empieza con claridad', title: 'IA y herramientas digitales para negocios', detail: '20 h cátedra + 5 h autónomas · 10 sesiones · Presencial', copy: 'Construye una base práctica: entiende la IA, domina tus primeras herramientas y crea prompts que sí te sirven.', accent: 'lime' },

@@ -1,7 +1,7 @@
 import { MessageCircle } from 'lucide-react'
 
 // Número de WhatsApp para las inscripciones
-const WHATSAPP_PHONE = '573158898014'
+const WHATSAPP_PHONE = '573158071474'
 const WHATSAPP_MESSAGE = encodeURIComponent(
   'Hola, quiero apartar mi cupo para el Diplomado en IA para empresarios.',
 )

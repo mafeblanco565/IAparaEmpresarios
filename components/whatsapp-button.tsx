@@ -1,5 +1,5 @@
 export function WhatsAppButton() {
-  const phone = '573158898014'
+  const phone = '573158071474'
   const message = encodeURIComponent(
     'Hola, quiero más información sobre el Diplomado de IA para empresarios.',
   )
